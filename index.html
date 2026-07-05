@@ -133,34 +133,38 @@
   .row2.single{grid-template-columns:1fr;}
 
   .stamp-wrap{
-    display:flex;
-    justify-content:center;
-    margin:-38px 0 -22px;
-    position:relative;
-    z-index:2;
+    margin:16px 0;
   }
   .stamp{
-    width:172px;
-    height:172px;
-    border-radius:50%;
-    border:2px dashed var(--gold);
+    width:100%;
+    border-radius:6px;
+    border:1px solid var(--gold);
+    border-left:5px solid var(--gold);
     background:var(--bg);
     display:flex;
-    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    transform:rotate(-5deg);
-    box-shadow:0 12px 30px -10px rgba(0,0,0,.6);
-    padding:8px;
-    text-align:center;
+    justify-content:space-between;
+    gap:14px;
+    box-shadow:0 12px 30px -16px rgba(0,0,0,.6);
+    padding:16px 18px;
+    text-align:left;
+  }
+  .stamp .stamp-text{
+    display:flex;
+    flex-direction:column;
   }
   .stamp .label{
     font-family:'IBM Plex Mono',monospace;
-    font-size:9.5px;
-    letter-spacing:.12em;
+    font-size:11px;
+    letter-spacing:.1em;
     text-transform:uppercase;
     color:var(--gold);
-    margin-bottom:4px;
+    margin-bottom:3px;
+  }
+  .stamp .unit{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--bg-text-dim);
   }
   .stamp .amount{
     font-family:'Fraunces',serif;
@@ -168,19 +172,14 @@
     font-size:26px;
     line-height:1.05;
     color:var(--bg-text);
-  }
-  .stamp .unit{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:10.5px;
-    color:var(--bg-text-dim);
-    margin-top:3px;
+    white-space:nowrap;
   }
 
   .results{
     background:var(--bg);
     border:1px solid #26324A;
     border-radius:6px;
-    padding:46px 20px 20px;
+    padding:20px;
   }
   .rline{
     display:flex;
@@ -271,9 +270,11 @@
 
   <div class="stamp-wrap">
     <div class="stamp">
-      <span class="label">Pune deoparte</span>
+      <div class="stamp-text">
+        <span class="label">Pune deoparte</span>
+        <span class="unit">pe lună</span>
+      </div>
       <span class="amount" id="stampAmount">0 lei</span>
-      <span class="unit">/ lună</span>
     </div>
   </div>
 
